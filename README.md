@@ -1,6 +1,6 @@
 # any-toolkit
 
-A toolkit of utility methods for testing purposes.
+A toolkit of utility methods for generating values for tests.
 
 ## Installation
 
@@ -8,10 +8,7 @@ A toolkit of utility methods for testing purposes.
 npm install any-toolkit
 ```
 
-## Usage
+## Motivation
 
-```typescript
-import { hello } from 'any-toolkit';
-
-console.log(hello()); // 'Hello, world!'
-```
+Inspired by [Test-Driven Development: Extensive Tutorial](https://leanpub.com/tdd-ebook) 
+book by [Grzesiek Galezowski](https://github.com/grzesiek-galezowski/tdd-ebook)
