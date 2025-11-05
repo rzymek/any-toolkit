@@ -1,20 +1,27 @@
-import RandExp from 'randexp';
+import RandExp from "randexp";
+import { showValuesOnFailure } from "./showValuesOnFailure";
 
 export function anyString(length: number): string;
 export function anyString(matching: RegExp): string;
 export function anyString(arg: RegExp | number) {
-  return typeof arg === 'number'
-    ? anyStringOfLength(arg)
-    : anyStringMatchingRegExp(arg);
+  return showValuesOnFailure(`anyString(${arg})`,
+    typeof arg === "number"
+      ? anyStringOfLength(arg)
+      : anyStringMatchingRegExp(arg)
+  );
 }
 
 export function anyPrintableString(length = 16) {
-  return anyStringMatchingRegExp(new RegExp(`[ -~]{${length}}`));
+  return showValuesOnFailure(`anyPrintableString(${length})`,
+    anyStringMatchingRegExp(new RegExp(`[ -~]{${length}}`))
+  );
 }
 
 export function anyIdentifier(length = 16) {
-  return anyStringMatchingRegExp(
-    new RegExp(`[a-zA-Z_][a-zA-Z0-9_]{${length - 1}}`),
+  return showValuesOnFailure(`anyIdentifier(${length})`,
+    anyStringMatchingRegExp(
+      new RegExp(`[a-zA-Z_][a-zA-Z0-9_]{${length - 1}}`)
+    )
   );
 }
 

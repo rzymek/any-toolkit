@@ -1,3 +1,7 @@
+import { showValuesOnFailure } from "./showValuesOnFailure";
+
 export function anyFloat(min = 0, max = 1): number {
-  return Math.random() * (max - min) + min;
+  return showValuesOnFailure(`anyFloat(${min}, ${max})`,
+    Math.random() * (max - min) + min
+  );
 }

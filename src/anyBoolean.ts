@@ -1,3 +1,5 @@
+import { showValuesOnFailure } from './showValuesOnFailure';
+
 export function anyBoolean(): boolean {
-  return Math.random() > 0.5;
+  return showValuesOnFailure('anyBoolean()', Math.random() > 0.5);
 }

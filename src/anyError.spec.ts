@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { anyError } from './anyError';
-import { anyStringOfLength } from './anyString';
+import { anyString } from './anyString';
 
 describe('anyError', () => {
   it('should return an Error object', () => {
@@ -11,7 +11,7 @@ describe('anyError', () => {
     expect(anyError().message).not.toEqual('');
   });
   it('should return an error with a message', () => {
-    const msg = anyStringOfLength(32);
+    const msg = anyString(32);
     expect(anyError(msg).message).toEqual(msg);
   });
 });
