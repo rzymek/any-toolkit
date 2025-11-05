@@ -10,5 +10,5 @@ npm install any-toolkit
 
 ## Motivation
 
-Inspired by [Test-Driven Development: Extensive Tutorial](https://leanpub.com/tdd-ebook) 
+Inspired by [Test-Driven Development: Extensive Tutorial](https://leanpub.com/tdd-ebook)
 book by [Grzesiek Galezowski](https://github.com/grzesiek-galezowski/tdd-ebook)

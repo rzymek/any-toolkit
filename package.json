@@ -1,12 +1,12 @@
 {
   "name": "any-toolkit",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A toolkit of utility methods for testing purposes.",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist; tsc",
     "test": "vitest",
     "lint": "eslint . --ext .ts --fix",
     "format": "prettier --write ."
