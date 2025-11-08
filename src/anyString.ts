@@ -1,13 +1,13 @@
 import RandExp from "randexp";
-import { showValuesOnFailure } from "./showValuesOnFailure";
+import { showValuesOnFailure } from "./internal/showValuesOnFailure";
 
-export function anyString(length: number): string;
+export function anyString(length?: number): string;
 export function anyString(matching: RegExp): string;
-export function anyString(arg: RegExp | number) {
-  return showValuesOnFailure(`anyString(${arg})`,
-    typeof arg === "number"
-      ? anyStringOfLength(arg)
-      : anyStringMatchingRegExp(arg)
+export function anyString(arg: RegExp | number | undefined) {
+  return showValuesOnFailure(`anyString(${arg ?? ''})`,
+    arg instanceof RegExp
+      ? anyStringMatchingRegExp(arg)
+      : anyStringOfLength(arg ?? 16)
   );
 }
 

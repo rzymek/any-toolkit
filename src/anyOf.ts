@@ -1,5 +1,5 @@
 import { anyInt } from './anyInt';
-import { showValuesOnFailure } from './showValuesOnFailure';
+import { showValuesOnFailure } from './internal/showValuesOnFailure';
 
 export function anyOf<T>(...array: T[]): T {
   return showValuesOnFailure(`anyOf([${array.length}])`,
