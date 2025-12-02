@@ -4,6 +4,7 @@
   "description": "A toolkit of utility methods for testing purposes.",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "type": "module",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf dist; tsc",
