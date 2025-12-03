@@ -79,8 +79,8 @@ importers:
         specifier: ^8.46.2
         version: 8.48.0(eslint@9.39.1)(typescript@5.9.3)
       vitest:
-        specifier: ^4.0.14
-        version: 4.0.14(@types/node@24.10.1)
+        specifier: ^3
+        version: 3.2.4(@types/node@24.10.1)
 
   e2e/jest:
     dependencies:
