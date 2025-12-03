@@ -1,6 +1,6 @@
 import { onTestFailed } from 'vitest';
 
-export function showValuesOnFailure<T>(name: string, actualValue: T): T {
+export function showActualValueOnError<T>(name: string, actualValue: T): T {
   const stack = new Error().stack;
   onTestFailed((taskResult) => {
     if (taskResult.task.result?.errors && stack) {

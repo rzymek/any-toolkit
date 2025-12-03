@@ -3,27 +3,25 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
+import type { Config } from "jest";
+import type { TsJestTransformerOptions } from "ts-jest";
 
 const config: Config = {
-  rootDir: 'src',
-  preset: "ts-jest",
+  rootDir: "src",
+  preset: "ts-jest/presets/default-esm",
   testEnvironment: "node",
-  "extensionsToTreatAsEsm": [".ts"],
+  extensionsToTreatAsEsm: [".ts"],
   transform: {
-    "[.]ts$": ['ts-jest',{useESM:true}],
+    "^.+\\.ts$": [
+      "ts-jest",
+      {
+        useESM: true,
+      } satisfies TsJestTransformerOptions,
+    ],
   },
-  reporters: [
-    "/home/rzymek/devel/any-toolkit/dist/jest/reporter.js",
-    "default",
-  ],
-  testResultsProcessor: "/home/rzymek/devel/any-toolkit/dist/jest/testResultsProcessor.js"
-
-
-  // transformIgnorePatterns: [
-  //   "node_modules/(?!variables/.*)",
-  //   "node_modules/.+\\.js$"
-  // ]
+  moduleNameMapper: {
+    "^(\\.{1,2}/.*)\\.js$": "$1",
+  },
 };
 
 export default config;

@@ -1,0 +1,13 @@
+{
+  "name": "any-toolkit-vitest",
+  "description": "A vitest-aware toolkit of utility methods for testing purposes.",
+  "peerDependencies": {
+    "vitest": "^3"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.14"
+  },
+  "dependencies": {
+    "any-toolkit": "link:../any-toolkit"
+  }
+}

@@ -2,6 +2,7 @@
   "name": "vite3",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "vitest"
   },
@@ -9,8 +10,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "any-toolkit-vitest": "link:../../any-toolkit-vitest",
     "typescript": "^5.9.3",
-    "vitest": "^3"
+    "any-toolkit": "link:../../any-toolkit",
+    "vitest": "^4"
   }
 }

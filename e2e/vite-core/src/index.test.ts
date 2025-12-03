@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { anyBoolean, anyIdentifier, anyInt, anyPrintableString, anyString } from "any-toolkit-vitest";
+import { anyBoolean, anyIdentifier, anyInt, anyPrintableString, anyString } from "any-toolkit";
 
 test("vite3", () => {
   anyString();

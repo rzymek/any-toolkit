@@ -1,0 +1,9 @@
+packages:
+  - any-toolkit
+  - any-toolkit-vitest
+  - e2e/*
+
+onlyBuiltDependencies:
+  - esbuild
+
+recursiveInstall: true
