@@ -9,5 +9,5 @@ test("vite3", () => {
   anyInt();
   anyBoolean();
   anyIdentifier();
-  expect(true).toBe(false);
+  expect(typeof anyBoolean()).not.toBe("boolean");
 });

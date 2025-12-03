@@ -1,22 +1,16 @@
 {
   "name": "jest",
   "private": true,
-  "version": "1.0.0",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
+  "dependencies": {
     "@jest/globals": "^29.7.0",
     "any-toolkit": "link:../../any-toolkit",
     "jest": "^30.2.0",
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
+    "jest-junit": "^16.0.0",
+    "typescript": "^5.9.3",
     "ts-jest": "^29.4.5"
   }
 }

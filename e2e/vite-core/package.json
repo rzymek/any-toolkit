@@ -1,15 +1,10 @@
 {
   "name": "vite3",
   "private": true,
-  "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "test": "vitest"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
+  "dependencies": {
     "typescript": "^5.9.3",
     "any-toolkit": "link:../../any-toolkit",
     "vitest": "^4"

@@ -8,5 +8,5 @@ test("any-toolkit", () => {
   anyInt();
   anyBoolean();
   anyIdentifier();
-  expect(true).toBe(false);
+  expect(typeof anyBoolean()).toBe("boolean");
 });

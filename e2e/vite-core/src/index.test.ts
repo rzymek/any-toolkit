@@ -8,5 +8,4 @@ test("vite3", () => {
   anyInt();
   anyBoolean();
   anyIdentifier();
-  expect(true).toBe(false);
 });

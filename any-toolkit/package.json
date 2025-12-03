@@ -33,6 +33,9 @@
     "typescript-eslint": "^8.46.2",
     "vitest": "^4.0.14"
   },
+  "dependencies": {
+    "randexp": "^0.5.3"
+  },
   "files": [
     "dist"
   ],
@@ -41,8 +44,5 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     }
-  },
-  "dependencies": {
-    "randexp": "^0.5.3"
   }
 }
