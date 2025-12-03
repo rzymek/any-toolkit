@@ -1,8 +1,8 @@
 {
   "name": "vite3",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
-  "private": true,
   "scripts": {
     "test": "vitest"
   },
