@@ -2,7 +2,7 @@
   "name": "vite3",
   "private": true,
   "scripts": {
-    "test": "vitest"
+    "test": "CI=1 vitest --reporter=json | node ../expectError.js src/index.test.ts"
   },
   "dependencies": {
     "any-toolkit-vitest": "link:../../any-toolkit-vitest",
