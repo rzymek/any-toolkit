@@ -3,7 +3,6 @@
   "scripts": {
     "build": "pnpm --filter '*' build",
     "test": "pnpm --filter '*' test",
-    "publish": "pnpm --filter '*' publish",
-    "xpreinstall": "pnpx dotsunited-merge-json ./any-toolkit/package.json ./any-toolkit-vitest/package-overrides.json > any-toolkit-vitest/package.json"
+    "publish": "pnpm --filter '*' publish"
   }
 }
