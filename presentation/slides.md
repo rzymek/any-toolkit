@@ -4,13 +4,9 @@ theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
+info: 'any-toolkit: Because 42 Is a Lie'
 # some information about your slides (markdown enabled)
 title: any-toolkit
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
 # apply UnoCSS classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
@@ -22,10 +18,11 @@ transition: fade
 comark: true
 # duration of the presentation
 duration: 15min
-
+addons:
+  - slidev-addon-qrcode
 ---
 
-# Testing with anyThing
+# The Case Against 123.45
 
 ---
 layout: image-right
@@ -130,6 +127,7 @@ it("should create and order", async () => {
 </style>
 ---
 
+# Domain specific with overrides
 
 ```ts
 it("should create and order", async () => {
@@ -149,7 +147,7 @@ it("should create and order", async () => {
 });
 ```
 ```ts
-function anyOrder(overrides: Partial<Order> = {}): Order {
+function anOrder(overrides: Partial<Order> = {}): Order {
   return {
     item: anyPrintableString(),
     quantity: anyPositiveInteger({ max: 100 }),
@@ -167,7 +165,7 @@ import { anOrder } from "./__fixtures__/order";
 it("should reject non-positive quantity", async () => {
   // given
   const order = anOrder({
-    quantity: anyInteger({ max: 0 })
+    quantity: anyOf(anyNegativeInteger(), 0)
   });
 
   // when
@@ -183,7 +181,6 @@ it("should reject non-positive quantity", async () => {
 ---
 
 # any-toolkit
-
 
 #### Install:
 ```bash
@@ -210,45 +207,22 @@ import {
 
 ---
 
-Pros:
+# Pros:
 
-* document acceptable values
-* highlight essential test input among irrelevant data
-* more test surface via random data generation
+* Document acceptable values
+* Highlight essential input among irrelevant data
+* More test surface via random data generation
 
-Cons:
+<div v-click style="margin-top: 2em">
 
-* false negative – e.g. you may actually require anyPrintableString() not anyString()
-* failures in builds triggered independently
+# Cons:
 
----
-
-### Pros
-
-* **Clear Expression of Intent**
-  Using `Any.String()` instead of a literal like `"John"` explicitly signals to future readers that the exact value does
-  not matter for this test scenario. This keeps the reader focused entirely on the data that *does* drive the behavior.
-* **Protection Against Accidental Coupling**
-  When you reuse hardcoded strings (like `"test"`) across multiple inputs, your production code might accidentally pass
-  because two distinct fields happen to match. `Any` helpers usually generate unique, sequential, or randomized values
-  every time they are called, preventing code from passing due to lucky coincidences.
-* **Easier Refactoring and Maintenance**
-  If the structural constraints of a data type change (e.g., if an ID format changes from an integer to a GUID, or a
-  string requires a specific prefix), you only need to update the logic inside the `Any` helper method rather than
-  hunting down and rewriting hundreds of hardcoded literals across your entire test suite.
-* **Reduced Test Clutter**
-  It eliminates the cognitive overhead of coming up with arbitrary names, numbers, or dummy objects, significantly
-  shortening the "Arrange" phase of your tests.
-* more test surface via random data generation
-
----
-
-### Cons
-
-* false negative – e.g. you may actually require anyPrintableString() not anyString()
-* non-deterministic test runs
-* failures in builds triggered independently
+* False negative – e.g. you may actually require anyPrintableString() not anyString()
+* Failures in builds triggered independently
+* Non-deterministic test runs
 * Obscured Failure Messages during Debugging
+
+</div>
 
 ---
 src: ./pages/any-toolkit-failure.md
@@ -268,7 +242,7 @@ pnpm install any-toolkit-vitest
 The API is the same:
 ```
 import { anyFloat, anyOf, anyPositiveInteger, anyPrintableString } from "any-toolkit";
-//  🔽 🔽 🔽
+//                                                                         🔽 🔽 🔽
 import { anyFloat, anyOf, anyPositiveInteger, anyPrintableString } from "any-toolkit-vitest";
 
 ```
@@ -319,32 +293,29 @@ Actual   :401 Bad Request
 ```
 
 ---
+layout: two-cols-header
+---
 
+# Thank you!
 
+::left::
 
-```ts [filename-example.ts]
-it(`should create backup filename`, () => {
-  // given:
-  const hostname = 'localhost';
-  // when
-  const name = backupFilename(hostname);
-  //then
-  expect(name).toBe('backup_localhost.zip');
-})
-```
+* https://github.com/rzymek/any-toolkit
+* https://npmjs.com/package/any-toolkit
+* https://npmjs.com/package/any-toolkit-vitest
+* https://github.com/grzesiek-galezowski/tdd-ebook
+* https://linkedin.com/in/krzysztof-rzymkowski/
 
 ::right::
 
-```ts [filename-example.ts]
-it(`should create backup filename`, () => {
-  // given:
-  const hostname = anyHostname();
-  // when
-  const name = backupFilename(hostname);
-  //then
-  expect(name).toBe(`backup_${hostname}.zip`);
-})
-
-const anyHostname = () =>
-  anyString(/^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$/)
-```
+<QRCode
+:width="300"
+:height="300"
+type="svg"
+data="https://www.linkedin.com/in/krzysztof-rzymkowski/"
+align="right"
+:margin="10"
+:imageOptions="{ margin: 10 }"
+:dotsOptions="{ color: '#007EBB' }"
+image="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+/>
