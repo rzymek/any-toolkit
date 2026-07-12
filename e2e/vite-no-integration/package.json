@@ -1,12 +1,12 @@
 {
-  "name": "vite3",
+  "name": "vite-no-integration",
   "private": true,
   "scripts": {
-    "test": "vitest"
+    "test": "CI=1 vitest"
   },
   "dependencies": {
-    "typescript": "^5.9.3",
     "any-toolkit": "link:../../any-toolkit",
+    "typescript": "^5.9.3",
     "vitest": "^4"
   }
 }

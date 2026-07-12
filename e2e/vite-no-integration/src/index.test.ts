@@ -1,4 +1,4 @@
-import { expect, test } from "@jest/globals";
+import { expect, test } from "vitest";
 import { anyBoolean, anyIdentifier, anyInteger, anyPositiveInteger, anyPrintableString, anyString } from "any-toolkit";
 
 test("any-toolkit", () => {

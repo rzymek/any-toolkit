@@ -5,8 +5,8 @@
     "test": "CI=1 vitest --reporter=json | node ../expectError.js src/index.test.ts"
   },
   "dependencies": {
-    "typescript": "^5.9.3",
     "any-toolkit-vitest": "link:../../any-toolkit-vitest",
+    "typescript": "^5.9.3",
     "vitest": "^4"
   }
 }

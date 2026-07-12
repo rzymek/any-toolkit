@@ -1,13 +1,5 @@
-import { expect, it, test } from "vitest";
-import {
-  anyBoolean,
-  anyFloat,
-  anyIdentifier,
-  anyOf,
-  anyPositiveInteger,
-  anyPrintableString,
-  anyString
-} from "any-toolkit-vitest";
+import { expect, test } from "vitest";
+import { anyIdentifier, anyPositiveInteger, anyPrintableString, anyString } from "any-toolkit-vitest";
 
 test("vite3", () => {
   anyPrintableString();
@@ -15,5 +7,5 @@ test("vite3", () => {
   anyString(/X..X/);
   anyPositiveInteger();
   anyIdentifier();
-  expect(typeof anyBoolean()).not.toBe("boolean");
+  expect(true).toBe(false);
 });

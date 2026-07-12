@@ -1,12 +1,11 @@
 import { expect, test } from "vitest";
-import { anyBoolean, anyIdentifier, anyInt, anyPrintableString, anyString } from "any-toolkit-vitest";
+import { anyIdentifier, anyPositiveInteger, anyPrintableString, anyString } from "any-toolkit-vitest";
 
-test("vite4", () => {
-  anyString();
+test("vite3", () => {
   anyPrintableString();
-  anyString();
-  anyInt();
-  anyBoolean();
+  anyString(2);
+  anyString(/X..X/);
+  anyPositiveInteger();
   anyIdentifier();
-  expect(typeof anyBoolean()).not.toBe("boolean");
+  expect(true).toBe(false);
 });
