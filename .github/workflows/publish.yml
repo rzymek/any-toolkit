@@ -31,5 +31,5 @@ jobs:
           package: any-toolkit-vitest/package.json
       - if: ${{ steps.publish.outputs.type }}
         run:
-          echo "# ${{ steps.publish.outputs.version }}" >> "any-toolkit@$GITHUB_STEP_SUMMARY"
-          echo "# ${{ steps.publish-vitest.outputs.version }}" >> "any-toolkit-vitest@$GITHUB_STEP_SUMMARY"
+          echo "# ${{ steps.publish.outputs.name }}@${{ steps.publish.outputs.version }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "# ${{ steps.publish-vitest.outputs.name }}@${{ steps.publish-vitest.outputs.version }}" >> "$GITHUB_STEP_SUMMARY"
