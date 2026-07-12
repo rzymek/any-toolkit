@@ -20,10 +20,12 @@ jobs:
         with:
           node-version: 24
       - id: publish
+        name: publish any-toolkit
         uses: JS-DevTools/npm-publish@v4.1.1
         with:
           package: any-toolkit/package.json
       - id: publish-vitest
+        name: publish any-toolkit-vitest
         uses: JS-DevTools/npm-publish@v4.1.1
         with:
           package: any-toolkit-vitest/package.json
