@@ -9,7 +9,7 @@ describe('anyDate', () => {
   it('should return a date within the specified range', () => {
     const from = new Date(2023, 0, 1);
     const to = new Date(2023, 0, 31);
-    const value = anyDate(from, to);
+    const value = anyDate({from, to});
     expect(value.getTime()).toBeGreaterThanOrEqual(from.getTime());
     expect(value.getTime()).toBeLessThanOrEqual(to.getTime());
   });

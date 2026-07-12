@@ -1,5 +1,5 @@
 import { anyInteger } from "./anyInteger.js";
 
-export function anyOf<T>(...array: T[]): T {
-  return array[anyInteger({ min: 0, max: array.length - 1 })];
+export function anyOf<T>(...values: T[]): T {
+  return values[anyInteger({ min: 0, max: values.length - 1 })];
 }
