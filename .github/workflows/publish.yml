@@ -20,6 +20,11 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
+      - name: verify versions are in sync
+        run: |
+          V1=$(jq -r .version any-toolkit/package.json)
+          V2=$(jq -r .version any-toolkit-vitest/package.json)
+          [ "$V1" = "$V2" ] || (echo "Version mismatch: $V1 != $V2" && exit 1)
       - run: pnpm run build
       - run: pnpm run test
       - id: publish
