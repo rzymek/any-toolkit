@@ -4,7 +4,7 @@ A toolkit of utility methods for generating random values in tests. Framework-ag
 
 ## Packages
 
-[![License: MIT](https://img.shields.io/npm/l/any-toolkit)](./LICENSE)
+[![License: MIT](https://img.shields.io/npm/l/any-toolkit)](./LICENSE) [![CI](https://github.com/rzymek/any-toolkit/actions/workflows/publish.yml/badge.svg)](https://github.com/rzymek/any-toolkit/actions/workflows/publish.yml)
 
  | Package | Version | Downloads | Description |
 |---------|---------|-----------|-------------|
