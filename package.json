@@ -3,7 +3,7 @@
   "scripts": {
     "build": "pnpm --filter '*' build",
     "test": "pnpm --filter '*' test",
-    "bump-version": "pnpm -r version patch",
+    "version": "pnpm --filter './any-toolkit*' exec pnpm version",
     "upgrade-dependencies": "pnpm --filter '*' upgrade --interactive --latest"
   },
   "packageManager": "pnpm@10.33.2"
