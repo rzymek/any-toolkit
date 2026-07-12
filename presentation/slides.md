@@ -220,7 +220,7 @@ This pattern makes is really explicit in the code.
 layout: two-cols-header
 ---
 
-# any-toolkit
+# any-toolkit <img src="https://img.shields.io/npm/v/any-toolkit" alt="npm version" style="display: inline; vertical-align: middle; margin-left: 0.1em;"/> 
 
 ::left::
 #### Install:
@@ -248,6 +248,7 @@ import {
 
 
 ::right::
+
 <div class="h-full flex flex-col justify-center">
 <a href="https://github.com/rzymek/any-toolkit" target="_blank" style="border:none">
 <QRCode
