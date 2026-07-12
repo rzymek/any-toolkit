@@ -42,7 +42,7 @@ backgroundSize: contain
 <!--
 First of all - credit where credit is due. 
 The techniques and patterns I'm presenting today are inspired by the book I've read some time ago.
-It's an open source ebook "Test-Driven Development" by Grzegorz Gałęziowski. It's available on Github and Leanpub. Links at the end of presentation.
+It's an open source ebook called "Test-Driven Development" by Grzegorz Gałęziowski. It's available on Github and Leanpub. Links at the end of presentation.
 The concept the I'm going to focus on is what the author called "anonymous input"
 -->
 
@@ -80,12 +80,13 @@ it("should create and order", async () => {
 </style>
 
 <!--
-I'll explain on a classic example. 
-This is a familiar test to verify creation using an api. 
-I create a sample order and verify it's there for retrieval.
-To created I need to define a valid order object.
-Typically a lot of magic meaningless values are used here. 123.45, Laptop, 1.
-This does not convey what input is valid and essential.
+I'll explain on a classic example.   
+This is a familiar test to verify creation using an api.   
+I create a sample order and verify it's there for retrieval.  
+To call `create` endpoint, I need to define a valid order object.  
+Typically a lot of magic meaningless values are used here: 123.45, Laptop, 1.  
+This does not convey what input is valid and essential.   
+Just adds noise to the test's code.
 -->
 
 ---
@@ -144,10 +145,11 @@ it("should create and order", async () => {
 </style>
 
 <!--
-Instead I can use simple methods that better document the constrains of the data.
-An item name can an any printable string.
-Quantity is a positive integer up to a 100.
-etc.
+Instead I can use simple methods that better document the constrains of the data.  
+
+An item name can an any printable string.  
+
+Quantity is a positive integer up to a 100. etc.
 -->
 
 ---
@@ -182,8 +184,10 @@ function anOrder(overrides: Partial<Order> = {}): Order {
 ```
 
 <!--
-This can be elevated to more complex objects. 
-I've extracted order creation to anOrder() function.
+This can be elevated to more complex objects.   
+
+I've extracted order creation to `anOrder()` function.  
+
 By default it creates the complete objects with random values. But every aspect of it can be optionally overridden.
 -->
 
@@ -264,14 +268,16 @@ image="/img/github-logo.svg"
 /></a>
 </div>
 
-
 <!--
 These any* functions are quite trivial to implement.
-And that is what we did in the project where I've first introduced it.
+
+And that is what we did in the project where I've first introduced it.  
 Then after parting ways with the company, I wanted to use it in another project.
-The book mentioned libraries for C# and Java.
+
+The book mentioned libraries for C# and Java.  
 A quick search on Google and Perplexity did not yield results for Typescript on npm.
-So in aliment with the rule - generalize on the second use - I've published my own set of functions for everyone to use.
+
+So in aliment with the rule - *generalize on the second use* - I've published my own set of functions for everyone to use.
 -->
 
 ---
