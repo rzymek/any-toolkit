@@ -4,10 +4,10 @@ A toolkit of utility methods for generating random values in tests. Framework-ag
 
 ## Packages
 
-| Package | Description |
-|---------|-------------|
-| [any-toolkit](./any-toolkit) | Core library — random value generators, works with any test framework |
-| [any-toolkit-vitest](./any-toolkit-vitest) | Drop-in vitest wrapper that prints generated values in error output on test failure |
+| Package | Version | Description |
+|---------|---------|-------------|
+| [any-toolkit](./any-toolkit) | [![npm version](https://img.shields.io/npm/v/any-toolkit)](https://www.npmjs.com/package/any-toolkit) | Core library — random value generators, works with any test framework |
+| [any-toolkit-vitest](./any-toolkit-vitest) | [![npm version](https://img.shields.io/npm/v/any-toolkit-vitest)](https://www.npmjs.com/package/any-toolkit-vitest) | Drop-in vitest wrapper that prints generated values in error output on test failure |
 
 ## Quick start
 
