@@ -14,7 +14,7 @@ export function anyPrintableString(length = 16) {
 
 export function anyIdentifier(length = 16) {
   return anyStringMatchingRegExp(
-    new RegExp(`[a-zA-Z_][a-zA-Z0-9_]{${length - 1}}`)
+    new RegExp(`[a-zA-Z_][a-zA-Z0-9_]{${length - 1}}`),
   );
 }
 

@@ -1,5 +1,9 @@
 import { expect, test } from "vitest";
-import { anyInteger, anyNegativeInteger, anyPositiveInteger } from "./anyInteger";
+import {
+  anyInteger,
+  anyNegativeInteger,
+  anyPositiveInteger,
+} from "./anyInteger";
 
 test("anyInteger", () => {
   expect(typeof anyInteger()).toBe("number");
