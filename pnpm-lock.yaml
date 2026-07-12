@@ -117,9 +117,6 @@ importers:
 
   e2e/vite3:
     dependencies:
-      any-toolkit:
-        specifier: link:../../any-toolkit
-        version: link:../../any-toolkit
       any-toolkit-vitest:
         specifier: link:../../any-toolkit-vitest
         version: link:../../any-toolkit-vitest
