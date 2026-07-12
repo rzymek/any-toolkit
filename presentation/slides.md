@@ -252,7 +252,6 @@ import {
 
 
 ::right::
-
 <div class="h-full flex flex-col justify-center">
 <a href="https://github.com/rzymek/any-toolkit" target="_blank" style="border:none">
 <QRCode
@@ -264,7 +263,7 @@ align="right"
 :margin="10"
 :backgroundOptions="{ color: 'white' }"
 :imageOptions="{ saveAsBlob: true }"
-image="/img/github-logo.svg"
+image="./github-logo.svg"
 /></a>
 </div>
 
