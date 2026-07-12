@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rzymek/any-toolkit"
+    "url": "git+https://github.com/rzymek/any-toolkit.git"
   },
   "author": "krzysztof.rzymkowski@gmail.com",
   "license": "MIT",
