@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "any-toolkit": "link:../../any-toolkit",
-    "typescript": "^5.9.3",
-    "vitest": "^4"
+    "typescript": "^7.0.2",
+    "vitest": "latest"
   }
 }

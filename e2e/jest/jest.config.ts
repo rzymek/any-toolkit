@@ -4,19 +4,21 @@
  */
 
 import type { Config } from "jest";
-import type { TsJestTransformerOptions } from "ts-jest";
 
 const config: Config = {
   rootDir: "src",
-  preset: "ts-jest/presets/default-esm",
   testEnvironment: "node",
   extensionsToTreatAsEsm: [".ts"],
   transform: {
     "^.+\\.ts$": [
-      "ts-jest",
+      "@swc/jest",
       {
-        useESM: true,
-      } satisfies TsJestTransformerOptions,
+        jsc: {
+          parser: { syntax: "typescript" },
+          target: "es2022",
+        },
+        module: { type: "es6" },
+      },
     ],
   },
   moduleNameMapper: {

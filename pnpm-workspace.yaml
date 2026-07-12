@@ -5,6 +5,7 @@ packages:
   - e2e/*
 
 onlyBuiltDependencies:
+  - "@swc/core"
   - esbuild
   - unrs-resolver
 
