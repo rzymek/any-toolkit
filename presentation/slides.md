@@ -39,6 +39,13 @@ backgroundSize: contain
   * Leanpub 
 * "Anonymous input"
 
+<!--
+First of all - credit where credit is due. 
+The techniques and patterns I'm presenting today are inspired by the book I've read some time ago.
+It's an open source ebook "Test-Driven Development" by Grzegorz Gałęziowski. It's available on Github and Leanpub. Links at the end of presentation.
+The concept the I'm going to focus on is what the author called "anonymous input"
+-->
+
 ---
 layout: two-cols-header
 ---
@@ -71,6 +78,16 @@ it("should create and order", async () => {
   column-gap: 20px; /* Adjust the gap size as needed */
 }
 </style>
+
+<!--
+I'll explain on a classic example. 
+This is a familiar test to verify creation using an api. 
+I create a sample order and verify it's there for retrieval.
+To created I need to define a valid order object.
+Typically a lot of magic meaningless values are used here. 123.45, Laptop, 1.
+This does not convey what input is valid and essential.
+-->
+
 ---
 layout: two-cols-header
 ---
@@ -125,6 +142,14 @@ it("should create and order", async () => {
   column-gap: 20px; /* Adjust the gap size as needed */
 }
 </style>
+
+<!--
+Instead I can use simple methods that better document the constrains of the data.
+An item name can an any printable string.
+Quantity is a positive integer up to a 100.
+etc.
+-->
+
 ---
 
 # Domain specific with overrides
@@ -133,11 +158,9 @@ it("should create and order", async () => {
 it("should create and order", async () => {
   // given
   const order = anOrder()
-
   // when
   const created = await api.createOrder(order);
   const fetched = await api.getOrder(created.id);
-
   // then
   expect(created.status).toBe("201 Created");
   expect(fetched).toEqual({
@@ -152,10 +175,17 @@ function anOrder(overrides: Partial<Order> = {}): Order {
     item: anyPrintableString(),
     quantity: anyPositiveInteger({ max: 100 }),
     price: anyFloat({ min: 0.01, max: 100.00 }),
-    currency: anyOf("PLN", "EUR")
+    currency: anyOf("PLN", "EUR"),
+    ...overrides,
   };
 }
 ```
+
+<!--
+This can be elevated to more complex objects. 
+I've extracted order creation to anOrder() function.
+By default it creates the complete objects with random values. But every aspect of it can be optionally overridden.
+-->
 
 ---
 
@@ -178,10 +208,21 @@ it("should reject non-positive quantity", async () => {
 
 ```
 
+<!--
+These overrides allows to highlight the parts of the object that is essential in a specific test case.
+
+Here I'm testing order's quantity constraints.
+Other parts of the order are irrelevant. 
+This pattern makes is really explicit in the code.
+-->
+
+---
+layout: two-cols-header
 ---
 
 # any-toolkit
 
+::left::
 #### Install:
 ```bash
 pnpm install any-toolkit;
@@ -190,20 +231,47 @@ pnpm install any-toolkit;
 #### Import:
 ```ts
 import {
-  anyBoolean,
-  anyDate,
-  anyError,
-  anyFloat,
-  anyPercentage,
-  anyInteger,
-  anyPositiveInteger,
-  anyNegativeInteger,
-  anyOf,
-  anyString,
-  anyPrintableString,
-  anyIdentifier,
+  anyBoolean,          
+  anyDate,                  // anyDate({from?, to?})
+  anyError,                 // anyError(message?)
+  anyFloat,                 // anyFloat({min?, max?})
+  anyPercentage,            
+  anyInteger,               // anyInteger({min?, max?})
+  anyPositiveInteger,       // anyPositiveInteger({min?})
+  anyNegativeInteger,       // anyNegativeInteger({max?})
+  anyOf,                    // anyOf(...values)
+  anyString,                // anyString(/pattern/); anyString(length?)
+  anyPrintableString,       // anyPrintableString(length? = 16) 
+  anyIdentifier,            // anyIdentifier(length? = 16)
 } from "any-toolkit";
 ```
+
+
+::right::
+<div class="h-full flex flex-col justify-center">
+<a href="https://github.com/rzymek/any-toolkit" target="_blank" style="border:none">
+<QRCode
+:width="300"
+:height="300"
+type="svg"
+data="https://github.com/rzymek/any-toolkit"
+align="right"
+:margin="10"
+:backgroundOptions="{ color: 'white' }"
+:imageOptions="{ saveAsBlob: true }"
+image="/img/github-logo.svg"
+/></a>
+</div>
+
+
+<!--
+These any* functions are quite trivial to implement.
+And that is what we did in the project where I've first introduced it.
+Then after parting ways with the company, I wanted to use it in another project.
+The book mentioned libraries for C# and Java.
+A quick search on Google and Perplexity did not yield results for Typescript on npm.
+So in aliment with the rule - generalize on the second use - I've published my own set of functions for everyone to use.
+-->
 
 ---
 
@@ -293,21 +361,25 @@ Actual   :401 Bad Request
 ```
 
 ---
-layout: two-cols-header
+layout: two-cols
 ---
 
 # Thank you!
+## Questions?
 
-::left::
+<div class="h-8" />
 
 * https://github.com/rzymek/any-toolkit
 * https://npmjs.com/package/any-toolkit
 * https://npmjs.com/package/any-toolkit-vitest
 * https://github.com/grzesiek-galezowski/tdd-ebook
 * https://linkedin.com/in/krzysztof-rzymkowski/
+* https://sli.dev/
 
 ::right::
 
+<div class="h-full flex flex-col justify-center">
+<a href="https://www.linkedin.com/in/krzysztof-rzymkowski/" style="border:none">
 <QRCode
 :width="300"
 :height="300"
@@ -319,3 +391,5 @@ align="right"
 :dotsOptions="{ color: '#007EBB' }"
 image="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
 />
+</a>
+</div>
