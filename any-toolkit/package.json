@@ -19,6 +19,10 @@
     "utilities",
     "testing"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rzymek/any-toolkit"
+  },
   "author": "krzysztof.rzymkowski@gmail.com",
   "license": "MIT",
   "devDependencies": {
