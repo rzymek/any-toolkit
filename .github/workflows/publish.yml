@@ -7,6 +7,7 @@ on:
 permissions:
   id-token: write
   contents: read
+  pages: write
 
 jobs:
   publish:
@@ -19,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
+      - run: pnpm run build
+      - run: pnpm run test
       - id: publish
         name: publish any-toolkit
         uses: JS-DevTools/npm-publish@v4.1.1
@@ -33,3 +36,22 @@ jobs:
         run:
           echo "# ${{ steps.publish.outputs.name }}@${{ steps.publish.outputs.version }}" >> "$GITHUB_STEP_SUMMARY"
           echo "# ${{ steps.publish-vitest.outputs.name }}@${{ steps.publish-vitest.outputs.version }}" >> "$GITHUB_STEP_SUMMARY"
+
+  publish-presentation:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          run_install: true
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: pnpm --filter any-toolkit-presentation build -- --base /any-toolkit/
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: presentation/dist
+      - uses: actions/deploy-pages@v5

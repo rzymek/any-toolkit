@@ -3,7 +3,8 @@
   "scripts": {
     "build": "pnpm --filter '*' build",
     "test": "pnpm --filter '*' test",
-    "publish": "pnpm --filter '*' publish"
+    "publish": "pnpm --filter '*' publish",
+    "upgrade-dependencies": "pnpm --filter '*' upgrade --interactive --latest"
   },
   "packageManager": "pnpm@10.33.2"
 }

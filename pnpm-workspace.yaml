@@ -1,6 +1,7 @@
 packages:
   - any-toolkit
   - any-toolkit-vitest
+  - presentation
   - e2e/*
 
 onlyBuiltDependencies:
