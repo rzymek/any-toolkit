@@ -27,7 +27,7 @@ it("should store and retrieve a user", () => {
 });
 ```
 
-> **Using vitest?** See [any-toolkit-vitest](https://github.com/rzymek/any-toolkit/tree/master/any-toolkit-vitest) — a drop-in replacement that prints the generated values in the error output when a test fails.
+> **Using vitest?** See [any-toolkit-vitest](https://www.npmjs.com/package/any-toolkit-vitest) — a drop-in replacement that prints the generated values in the error output when a test fails.
 
 ## API
 
