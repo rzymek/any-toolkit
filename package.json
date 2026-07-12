@@ -4,5 +4,6 @@
     "build": "pnpm --filter '*' build",
     "test": "pnpm --filter '*' test",
     "publish": "pnpm --filter '*' publish"
-  }
+  },
+  "packageManager": "pnpm@10.33.2"
 }
