@@ -42,8 +42,8 @@ backgroundSize: contain
 <!--
 First of all - credit where credit is due. 
 The techniques and patterns I'm presenting today are inspired by the book I've read some time ago.
-It's an open source ebook called "Test-Driven Development" by Grzegorz Gałęziowski. It's available on Github and Leanpub. Links at the end of presentation.
-The concept the I'm going to focus on is what the author called "anonymous input"
+It's an open source ebook called "Test-Driven Development" by Grzegorz Gałęzowski. It's available on Github and Leanpub. Links at the end of presentation.
+The concept I'm going to focus on is what the author called "anonymous input"
 -->
 
 ---
@@ -145,11 +145,11 @@ it("should create an order", async () => {
 </style>
 
 <!--
-Instead I can use simple methods that better document the constrains of the data.  
+Instead I can use simple methods that better document the constraints of the data.  
 
-An item name can an any printable string.  
+An item name can be any printable string.  
 
-Quantity is a positive integer up to a 100. etc.
+Quantity is a positive integer up to 100. etc.
 -->
 
 ---
@@ -207,13 +207,13 @@ it("should reject non-positive quantity", async () => {
 
   // then
   expect(created.status).toBe("400 Bad Request");
-  expect(created.error).toBe("Quantity must be a greater than 0");
+  expect(created.error).toBe("Quantity must be greater than 0");
 });
 
 ```
 
 <!--
-These overrides allows to highlight the parts of the object that is essential in a specific test case.
+These overrides allow to highlight the parts of the object that is essential in a specific test case.
 
 Here I'm testing order's quantity constraints.
 Other parts of the order are irrelevant. 
@@ -276,7 +276,7 @@ Then after parting ways with the company, I wanted to use it in another project.
 The book mentioned libraries for C# and Java.  
 A quick search on Google and Perplexity did not yield results for Typescript on npm.
 
-So in aliment with the rule - *generalize on the second use* - I've published my own set of functions for everyone to use.
+So in alignment with the rule - *generalize on the second use* - I've published my own set of functions for everyone to use.
 -->
 
 ---
