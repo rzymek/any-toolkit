@@ -53,7 +53,7 @@ layout: two-cols-header
 # Classic
 ::left::
 ```ts
-it("should create and order", async () => {
+it("should create an order", async () => {
   // given
   const order: Order = {
     item: "Laptop",
@@ -96,7 +96,7 @@ layout: two-cols-header
 # Anonymous Input
 ::left::
 ```ts
-it("should create and order", async () => {
+it("should create an order", async () => {
   // given
   const order: Order = {
     item: "Laptop",
@@ -118,7 +118,7 @@ it("should create and order", async () => {
 ```
 ::right::
 ```ts
-it("should create and order", async () => {
+it("should create an order", async () => {
   // given
   const order: Order = {
     item: anyPrintableString(),
@@ -157,7 +157,7 @@ Quantity is a positive integer up to a 100. etc.
 # Domain specific with overrides
 
 ```ts
-it("should create and order", async () => {
+it("should create an order", async () => {
   // given
   const order = anOrder()
   // when
@@ -229,7 +229,7 @@ layout: two-cols-header
 ::left::
 #### Install:
 ```bash
-pnpm install any-toolkit;
+pnpm install any-toolkit
 ```
 
 #### Import:
@@ -339,7 +339,7 @@ transition: fade
 ```ts
 import { anyFloat, anyOf, anyPositiveInteger, anyPrintableString } from "any-toolkit-vitest";
 //                                                                                  ^^^^^^^ 
-it("should create and order", async () => {
+it("should create an order", async () => {
   const order = {
     item: anyPrintableString(),
     quantity: anyPositiveInteger({ max: 100 }),

@@ -3,7 +3,7 @@
 ```ts
 import { anyFloat, anyOf, anyPositiveInteger, anyPrintableString } from "any-toolkit";
 
-it("should create and order", async () => {
+it("should create an order", async () => {
   const order= {
     item: anyPrintableString(),
     quantity: anyPositiveInteger({ max: 100 }),
