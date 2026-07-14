@@ -24,6 +24,12 @@ addons:
 
 # The Case Against 123.45
 
+<!--
+Today I want to make a case against magic values in tests.  
+Numbers like 123.45, strings like "Laptop" - values that look meaningful but aren't.  
+I'll show a simple pattern that makes test intent much clearer and broadens test coverage at the same time.
+-->
+
 ---
 layout: image-right
 image: https://d2sofvawe08yqg.cloudfront.net/tdd-ebook/s_hero?1734375643&1734375643
@@ -298,8 +304,18 @@ So in alignment with the rule - *generalize on the second use* - I've published 
 
 </div>
 
+<!--
+The pros make tests cleaner and more honest about their intent.  
+The cons are real - random data means random failures that are hard to reproduce.  
+The last con - obscured failure messages - is the one we can actually fix.
+-->
+
 ---
 src: ./pages/any-toolkit-failure.md
+notes: |
+  Here's what a failure looks like with plain any-toolkit.
+  The error tells you what went wrong - but not which random values triggered it.
+  To reproduce, you'd have to know what each any* function returned that particular run.
 ---
 ---
 
@@ -328,12 +344,21 @@ import { anyFloat, anyOf, anyPositiveInteger, anyPrintableString } from "any-too
   * print the values used on vitest failure 
   * wrapper for any-toolkit with `vitest` integration.
 
+<!--
+The solution is any-toolkit-vitest.  
+It's a drop-in replacement - the API is identical, just change the import path.  
+Under the hood it wraps each function to report the generated values when a test fails.
+-->
+
 ---
 src: ./pages/any-toolkit-failure.md
 transition: fade
+notes: |
+  Back to the same failure.
+  We know what went wrong - but still not which values triggered it.
+  This is exactly the problem any-toolkit-vitest solves.
 ---
 
----
 ---
 
 ```ts
@@ -365,6 +390,12 @@ Actual   :401 Bad Request
     at /.../demo.test.ts:13:29
     at file:///...@vitest/runner/dist/chunk-hooks.js:155:11
 ```
+
+<!--
+Now the failure output includes an any-toolkit section listing each generated value alongside its constraint.  
+You can immediately see what was used and reproduce the failure deterministically.  
+The obscured failure message con is solved.
+-->
 
 ---
 layout: two-cols
@@ -399,3 +430,8 @@ image="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
 />
 </a>
 </div>
+
+<!--
+Links to the packages and the book are on the left.  
+Happy to take questions.
+-->

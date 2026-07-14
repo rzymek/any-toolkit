@@ -23,4 +23,3 @@ Actual   :401 Bad Request
     at /.../demo.test.ts:13:29
     at file:///...@vitest/runner/dist/chunk-hooks.js:155:11
 ```
----
