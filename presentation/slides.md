@@ -311,12 +311,17 @@ The last con - obscured failure messages - is the one we can actually fix.
 -->
 
 ---
-src: ./pages/any-toolkit-failure.md
-notes: |
-  Here's what a failure looks like with plain any-toolkit.
-  The error tells you what went wrong - but not which random values triggered it.
-  To reproduce, you'd have to know what each any* function returned that particular run.
----
+
+<<< @/snippets/failure.ts
+
+<<< @/snippets/failure.txt
+
+<!--
+Here's what a failure looks like with plain any-toolkit.  
+The error tells you what went wrong - but not which random values triggered it.  
+To reproduce, you'd have to know what each any* function returned that particular run.
+-->
+
 ---
 
 <img
@@ -351,13 +356,18 @@ Under the hood it wraps each function to report the generated values when a test
 -->
 
 ---
-src: ./pages/any-toolkit-failure.md
 transition: fade
-notes: |
-  Back to the same failure.
-  We know what went wrong - but still not which values triggered it.
-  This is exactly the problem any-toolkit-vitest solves.
 ---
+
+<<< @/snippets/failure.ts
+
+<<< @/snippets/failure.txt
+
+<!--
+Back to the same failure.  
+We know what went wrong - but still not which values triggered it.  
+This is exactly the problem any-toolkit-vitest solves.
+-->
 
 ---
 
